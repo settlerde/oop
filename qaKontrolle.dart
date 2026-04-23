@@ -3,13 +3,13 @@ class Maket {
   double minLength = 118;
   double maxWidth = 82;
   double minWidth = 78;
-  bool isDeffect = false;
+  bool isDeffect = true;
   void checkPart(double length, double width, bool isDeffect) {
     if (length >= minLength &&
         length <= maxLength &&
         width >= minWidth &&
         width <= maxWidth &&
-        isDeffect) {
+        !isDeffect) {
       print('OK: Teil innerhalb der Toleranz');
     } else {
       print('Fehler: Teil außerhalb der Toleranz');
@@ -23,6 +23,7 @@ void qualityCheck(double length, double width, bool isDeffect) {
 }
 
 void main() {
-  qualityCheck(120, 80, true);
-  qualityCheck(123, 80, false);
+  qualityCheck(120, 85, false);
+  qualityCheck(123, 80, true);
+  qualityCheck(121, 79, false);
 }
