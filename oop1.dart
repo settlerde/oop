@@ -1,13 +1,13 @@
 class Developer {
   String name;
   String language;
-  double erfahrung;
+  double expirienceYear;
   bool isStudent;
 
   Developer(
     this.name,
     this.language, [
-    this.erfahrung = 0,
+    this.expirienceYear = 0,
     this.isStudent = true,
   ]);
 
@@ -19,11 +19,11 @@ class Developer {
 
 void main() {
   Developer dev1 = Developer('Yan', 'JS');
-  Developer dev2 = Developer('Olek', 'Dart', 0.3);
+  Developer dev2 = Developer('Olek', 'Dart', 0.2);
 
   dev1.displayInfo();
-  print('Experience: ${dev1.erfahrung}, Is Student: ${dev1.isStudent}');
+  print('Experience: ${dev1.expirienceYear}, Is Student: ${dev1.isStudent}');
 
   dev2.displayInfo();
-  print('Experience: ${dev2.erfahrung}, Is Student: ${dev2.isStudent}');
+  print('Experience: ${dev2.expirienceYear}, Is Student: ${dev2.isStudent}');
 }
