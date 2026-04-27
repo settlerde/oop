@@ -1,42 +1,41 @@
-enum Planet { earth, mars, jupiter, moon }
+enum MeasurementSystem {
+  mm(1.0),
+  cm(10.0),
+  dm(100.0),
+  m(1000.0),
+  inch(25.4),
+  feet(304.8);
 
-class Weight {
-  final double kg;
+  final double toMmFactor;
 
-  Weight._internal(this.kg);
+  const MeasurementSystem(this.toMmFactor);
+}
 
-  Weight.onMars(double weight) : this._internal(weight * 0.38);
-  Weight.onMoon(double weight) : this._internal(weight * 0.16);
-  Weight.onJupiter(double weight) : this._internal(weight * 2.36);
+class Triangle {
+  double _widthInMm;
+  double _heightInMm;
 
-  Weight.fromPlanet(double weight, Planet planet)
-    : this._internal(_convertWeight(weight, planet));
+  Triangle(this._widthInMm, this._heightInMm);
 
-  static double _convertWeight(double weight, Planet planet) {
-    switch (planet) {
-      case Planet.earth:
-        return weight;
-      case Planet.mars:
-        return weight * 0.38;
-      case Planet.jupiter:
-        return weight * 2.36;
-      case Planet.moon:
-        return weight * 0.16;
-    }
-  }
+  double get widthInMeters => _widthInMm / MeasurementSystem.m.toMmFactor;
+  double get heightInMeters => _heightInMm / MeasurementSystem.m.toMmFactor;
+
+  double get widthInInches => _widthInMm / MeasurementSystem.inch.toMmFactor;
+  double get heightInInches => _heightInMm / MeasurementSystem.inch.toMmFactor;
+
+  set widthInMeters(double value) =>
+      _widthInMm = value * MeasurementSystem.m.toMmFactor;
+  set heightInMeters(double value) =>
+      _heightInMm = value * MeasurementSystem.m.toMmFactor;
+
+  set widthInInches(double value) =>
+      _widthInMm = value * MeasurementSystem.inch.toMmFactor;
+  set heightInInches(double value) =>
+      _heightInMm = value * MeasurementSystem.inch.toMmFactor;
 }
 
 void main() {
-  var myWWeightOnEarth = Weight.fromPlanet(93, Planet.earth);
-  var myWeightOnMars = Weight.fromPlanet(93, Planet.mars);
-  var myWeightOnJupiter = Weight.fromPlanet(93, Planet.jupiter);
-  var myWeightOnMoon = Weight.fromPlanet(93, Planet.moon);
-
-  print("Gewicht auf der Erde: ${myWWeightOnEarth.kg} kg");
-  print("Gewicht auf dem Mars: ${myWeightOnMars.kg} kg");
-  print("Gewicht auf dem Jupiter: ${myWeightOnJupiter.kg} kg");
-  print("Gewicht auf dem Mond: ${myWeightOnMoon.kg} kg");
-
-  print(myWeightOnMoon.kg);
-  print(Weight.onMars(93).kg);
+  var t = Triangle(200, 150);
+  print(t.widthInInches); // getter konvertiert automatisch in Zoll
+  t.widthInMeters = 1.5; // setter gespeichert in mm, aber wir geben Meter an
 }
