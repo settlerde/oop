@@ -22,7 +22,7 @@ void main() {
   Developer dev2 = Developer('Olek', 'Dart', 0.2);
 
   dev1.displayInfo();
-  print('Experience: ${dev1.expirienceYear}, Is Student: ${dev1.isStudent}');
+  print('Experience: ${dev1.expirienceYear}, Is Student: ${dev1.isStudent}\n');
 
   dev2.displayInfo();
   print('Experience: ${dev2.expirienceYear}, Is Student: ${dev2.isStudent}');
