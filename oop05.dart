@@ -30,7 +30,7 @@ class Triangle {
 }
 
 void main() {
-  var t = Triangle(20, 10);
-  print(t.getArea
-  (MeasurementSystem.mm));
+  var t = Triangle(20, 10).getArea
+  (MeasurementSystem.inch);
+  print(t);
 }
