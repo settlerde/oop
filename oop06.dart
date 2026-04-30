@@ -49,8 +49,9 @@ class Bird extends Animal implements CanFly {
 
 void globalFly(Object creature) {
   if (creature is CanFly) {
+    CanFly flyngCreature = creature;
     print('Flying creature');
-    creature.fly();
+    flyngCreature.fly();
   } else {
     print('Creature is not flying');
   }
@@ -59,7 +60,7 @@ void globalFly(Object creature) {
 void main() {
   var myBird = Bird();
   var myFish = Goldfish();
+  print('Checking if ti can fly: \n');
   globalFly(myFish);
   globalFly(myBird);
 }
-
