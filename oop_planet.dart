@@ -1,7 +1,7 @@
 enum Planet { earth, mars, jupiter, moon }
 
 class Weight {
-  final double kg;
+  double kg;
 
   Weight._internal(this.kg);
 
@@ -27,7 +27,7 @@ class Weight {
 }
 
 void main() {
-  var myWWeightOnEarth = Weight.fromPlanet(93, Planet.earth);
+  var myWWeightOnEarth = Weight.fromPlanet(95, Planet.earth);
   var myWeightOnMars = Weight.fromPlanet(93, Planet.mars);
   var myWeightOnJupiter = Weight.fromPlanet(93, Planet.jupiter);
   var myWeightOnMoon = Weight.fromPlanet(93, Planet.moon);
@@ -38,5 +38,5 @@ void main() {
   print("Gewicht auf dem Mond: ${myWeightOnMoon.kg} kg");
 
   print(myWeightOnMoon.kg);
-  print(Weight.onMars(93).kg);
+  print(Weight.onMars(95).kg);
 }
