@@ -48,6 +48,11 @@ class CoinStack {
     return false;
   }
 
+  @override
+  String toString() {
+    return 'CoinStack(Coins: $_coinsList, Total: $totalValue)';
+  }
+
   int get hashCode => totalValue.hashCode;
 }
 
@@ -58,14 +63,14 @@ void main() {
   print('My Stack: $myStack (Total: ${myStack.totalValue})');
   print('Other stack: $otherStack (Total: ${otherStack.totalValue})');
 
-  print('Is my stack bigger? ${myStack > otherStack}'); // true
+  print('Is my stack bigger? ${myStack > otherStack}');
 
   var combined = myStack + otherStack;
-  print('Result of addition: $combined'); // [5, 10, 20, 10, 5]
+  print('Result of addition: $combined');
 
   var result = myStack - otherStack;
   if (result != null) {
-    print('Result of deduction: ${result}'); // [20]
+    print('Result of deduction: ${result}');
   } else {
     print('Deduction is impossible!');
   }
