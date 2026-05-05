@@ -1,10 +1,18 @@
+/// Ein Klass
 class Teilnehmer {
+  /// Klassenattribut ID
   final int idNumer;
+
+  /// KLassenattribut Name
   final String name;
+
+  /// Optionales Attribut Email
   final String? email;
 
+  /// Klassenkonstruktor
   Teilnehmer(this.name, this.idNumer, [this.email]);
 
+  /// Klassenmethode 'Kopieren'
   Teilnehmer copyWith({String? name, int? idNumer, Function(String?)? email}) {
     return Teilnehmer(
       name ?? this.name,
