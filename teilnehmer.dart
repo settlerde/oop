@@ -18,8 +18,8 @@ class Teilnehmer {
 }
 
 void main() {
-  final user = Teilnehmer('Olek', 777, 'olek@cdemy.de');
-  final user2 = user.copyWith(email: (email) => null);
+  final user = Teilnehmer('Olek', 777);
+  final user2 = user.copyWith(idNumer: 333, email: (email) => 'user@email.de');
   print(user);
   print(user2);
 }
