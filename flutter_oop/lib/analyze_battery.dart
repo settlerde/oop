@@ -1,9 +1,12 @@
+/// Eine Klasse die eine Liste zurückgibt
 class DeviceService {
+  /// List ist static für globalen Zugriff
   static List<int> getBatteryLevels() {
     return [45, 22, 28, 10, 15, 99];
   }
 }
 
+/// Funktion die Daten einer Liste vergleicht
 void analyzeLowestBattery() {
   List<int> batteryLevels = DeviceService.getBatteryLevels();
 
@@ -28,6 +31,8 @@ void analyzeLowestBattery() {
 void main() {
   analyzeLowestBattery();
 }
+
+/// Pseudocode auf dem der Code basiert
 
 /*
 START
