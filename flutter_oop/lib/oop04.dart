@@ -43,29 +43,29 @@ class Cdemy {
 void main() {
   Cdemy myCdemy = Cdemy();
 
-  Kurs dartKurs = Kurs("Dart Profi");
-  Kurs flutterKurs = Kurs("Flutter zero to hero");
-  Kurs webDevKurs = Kurs("Web Development");
+  Kurs dartKurs = Kurs('Dart Profi');
+  Kurs flutterKurs = Kurs('Flutter zero to hero');
+  Kurs webDevKurs = Kurs('Web Development');
 
   myCdemy.addKurs(dartKurs);
   myCdemy.addKurs(flutterKurs);
   myCdemy.addKurs(webDevKurs);
 
-  Teilnehmer t1 = Teilnehmer("Olek", "Melnychenko", Geschlecht.maennlich);
-  Teilnehmer t2 = Teilnehmer("Maria", "Jason", Geschlecht.weiblich);
-  Teilnehmer t3 = Teilnehmer("Alex", "Seasharp", Geschlecht.divers);
+  Teilnehmer t1 = Teilnehmer('Olek', 'Melnychenko', Geschlecht.maennlich);
+  Teilnehmer t2 = Teilnehmer('Maria', 'Jason', Geschlecht.weiblich);
+  Teilnehmer t3 = Teilnehmer('Alex', 'Seasharp', Geschlecht.divers);
 
   dartKurs.addTeilnehmer(t1);
   webDevKurs.addTeilnehmer(t2);
   flutterKurs.addTeilnehmer(t3);
 
-  print("Cdemy Kurse:");
+  print('Cdemy Kurse:');
   for (var kurs in myCdemy.kurse) {
-    print("-- ${kurs.titel} --");
-    print("  Teilnehmer:");
+    print('-- ${kurs.titel} --');
+    print('  Teilnehmer:');
     for (var teilnehmer in kurs.teilnehmerListe) {
       print(
-        "  - ${teilnehmer.vorname} ${teilnehmer.name} (${teilnehmer.geschlecht})",
+        '  - ${teilnehmer.vorname} ${teilnehmer.name} (${teilnehmer.geschlecht})',
       );
     }
   }

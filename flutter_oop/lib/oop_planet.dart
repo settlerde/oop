@@ -32,10 +32,10 @@ void main() {
   var myWeightOnJupiter = Weight.fromPlanet(93, Planet.jupiter);
   var myWeightOnMoon = Weight.fromPlanet(93, Planet.moon);
 
-  print("Gewicht auf der Erde: ${myWWeightOnEarth.kg} kg");
-  print("Gewicht auf dem Mars: ${myWeightOnMars.kg} kg");
-  print("Gewicht auf dem Jupiter: ${myWeightOnJupiter.kg} kg");
-  print("Gewicht auf dem Mond: ${myWeightOnMoon.kg} kg");
+  print('Gewicht auf der Erde: ${myWWeightOnEarth.kg} kg');
+  print('Gewicht auf dem Mars: ${myWeightOnMars.kg} kg');
+  print('Gewicht auf dem Jupiter: ${myWeightOnJupiter.kg} kg');
+  print('Gewicht auf dem Mond: ${myWeightOnMoon.kg} kg');
 
   print(myWeightOnMoon.kg);
   print(Weight.onMars(95).kg);

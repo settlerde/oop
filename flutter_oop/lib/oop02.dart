@@ -40,9 +40,9 @@ void main() {
   var myTriangle = Triangle.fromCm(1.5, 2.0);
   var myTriangle2 = Triangle.fromSystem(1.5, 2.0, MeasurementSystem.dm);
 
-  print("Ширина в мм: ${myTriangle.widthInMm}");
-  print("Высота в мм: ${myTriangle.heightInMm}");
+  print('Ширина в мм: ${myTriangle.widthInMm}');
+  print('Высота в мм: ${myTriangle.heightInMm}');
   print(
-    "Breite / Höhe in mm: ${myTriangle2.widthInMm} / ${myTriangle2.heightInMm}",
+    'Breite / Höhe in mm: ${myTriangle2.widthInMm} / ${myTriangle2.heightInMm}',
   );
 }

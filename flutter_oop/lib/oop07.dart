@@ -6,7 +6,7 @@ class GameObject {
   GameObject({required this.name, this.posX = 0, this.posY = 0});
 
   void despawn() {
-    print("Object $name removed from the world.");
+    print('Object $name removed from the world.');
   }
 }
 
@@ -25,7 +25,7 @@ abstract class DamageableObject extends GameObject {
 
   void takeDamage(int damage) {
     _health -= damage;
-    print("$name got $damage damage. Remained HP: $_health");
+    print('$name got $damage damage. Remained HP: $_health');
     if (isDead()) {
       onKilled();
     }
@@ -47,7 +47,7 @@ class Player extends DamageableObject {
   @override
   void onKilled() {
     livesRemaining--;
-    print("Player $name dead! Lives remained: $livesRemaining");
+    print('Player $name dead! Lives remained: $livesRemaining');
   }
 }
 
@@ -63,23 +63,23 @@ class Monster extends DamageableObject {
   });
 
   String makeNoise() {
-    return "RRRRRRR!";
+    return 'RRRRRRR!';
   }
 
   @override
   void onKilled() {
-    print("Monster $name defeated and crumbled into gold!");
+    print('Monster $name defeated and crumbled into gold!');
     despawn();
   }
 }
 
 void main() {
-  var hero = Player(name: "Olek", maxHealth: 100);
+  var hero = Player(name: 'Olek', maxHealth: 100);
   var orc = Monster(
-    name: "Jlob",
+    name: 'Jlob',
     maxHealth: 50,
     threatLevel: 5,
-    color: "Green",
+    color: 'Green',
   );
 
   print(orc.makeNoise());

@@ -45,7 +45,7 @@ void analyzeLowestBattery() {
 
   // Ausgabe
   print(
-    "Niedrigster Akkustand: $minBattery% (Gerät-Index: $minIndex), Kritische Geräte (<20%): $criticalCount",
+    'Niedrigster Akkustand: $minBattery% (Gerät-Index: $minIndex), Kritische Geräte (<20%): $criticalCount',
   );
 }
 
