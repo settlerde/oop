@@ -5,6 +5,7 @@ abstract class Animal {
 
 abstract class CanFly {
   void fly();
+  
 }
 
 abstract class CanBreatheUnderWater {
@@ -30,7 +31,7 @@ class Goldfish extends Fish {
   }
 }
 
-class Bird extends Animal implements CanFly {
+class Bird extends Animal implements CanFly{
   @override
   void fly() {
     print('The bird is flying in the sky');

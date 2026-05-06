@@ -1,7 +1,8 @@
-// Der Service DeviceService mit der Methode:
+/// Die Klasse DeviceService mit der Methode die eine Liste von Werten ausgibt.
 class DeviceService {
-  List<int> getBatteryLevels() {
-    // Methode die Akkustände ausgibt
+  /// Die Methode selbst die Akkustände ausgibt.
+  static List<int> getBatteryLevels() {
+    //static Liste die in ganzem Code verfügbar ist.
     return [
       45,
       12,
@@ -17,12 +18,12 @@ class DeviceService {
   }
 }
 
-// Die haupt Funktion
+/// Die Funktion die wird Akkustände prüfen und rechnen.
 void analyzeLowestBattery() {
-  DeviceService service = DeviceService();
+  //var service = DeviceService(); // neues Objekt erstelen
 
   // Das Array der Akkustände laden.
-  List<int> batteryLevels = service.getBatteryLevels();
+  List<int> batteryLevels = DeviceService.getBatteryLevels();
 
   // Initialisierung
   int minBattery = batteryLevels[0]; // ab erste fangen an - [0]

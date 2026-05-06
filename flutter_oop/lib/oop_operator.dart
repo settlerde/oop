@@ -21,15 +21,36 @@ class CoinStack {
 
   /// Der Operator [-] vergleicht zwei Listen und entfernt alle doppelten Münzen, um anschlißend eine neue Liste zurükzugiben.
   CoinStack? operator -(CoinStack other) {
-    List<int> tempList = List.from(_coinsList);
-    for (int coin in other._coinsList) {
-      if (tempList.remove(coin)) {
-      } else {
-        return null;
-      }
+    List<int> tempList = _coinsList;
+    for (int i = 0; i < other._coinsList.length; i++) {
+      print("Versuch $i: ${other._coinsList[i]}");
+      print("Versuch $i: ${tempList[i]}");
+
+      tempList[i] - other._coinsList[i];
     }
     return CoinStack(tempList);
   }
+
+  // CoinStack? operator -(CoinStack other) {
+  //   List<int> tempList = _coinsList;
+  //   bool isRemove = false;
+  //   for (int i = 0; i < other._coinsList.length; i++) {
+  //     print("Erste for: ${other._coinsList[i]}");
+  //     print(_coinsList);
+  //     print(other._coinsList);
+  //     for (int j = 0; j < tempList.length; j++) {
+  //       print("Zweite for versuch $i: ${other._coinsList[i]}");
+  //       print("Zweite for versuch $j ${tempList[j]}");
+
+  //       if (other._coinsList[i] == tempList[j]) {
+  //         print("true");
+  //         tempList.remove(tempList[j]);
+  //         isRemove = true;
+  //       }
+  //     }
+  //   }
+  //   return isRemove ? CoinStack(tempList) : null;
+  // }
 
   /// Der Vergleichoperator [>] vergleicht die Summen zweier Listen.
   bool operator >(CoinStack other) {
@@ -73,7 +94,7 @@ class CoinStack {
 
 void main() {
   var myStack = CoinStack([5, 10, 20]);
-  var otherStack = CoinStack([10, 5]);
+  var otherStack = CoinStack([1, 63, 5]);
 
   print('My Stack: $myStack (Total: ${myStack.totalValue})');
   print('Other stack: $otherStack (Total: ${otherStack.totalValue})');

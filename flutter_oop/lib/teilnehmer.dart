@@ -1,4 +1,4 @@
-/// Ein Klass
+/// Die Klasse aus der neue Objekte erstellt oderkopiert werden.
 class Teilnehmer {
   /// Klassenattribut ID
   final int idNumer;

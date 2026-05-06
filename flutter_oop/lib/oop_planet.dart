@@ -1,10 +1,14 @@
+/// Ein spezieler Klassentyp [enum] der eine Liste von unveränderlicher Objekte speichert.
 enum Planet { earth, mars, jupiter, moon }
 
+/// Eine Klasse die das Gewicht einer Person auf verschidenen Planeten berechnet
 class Weight {
+  /// Der Parameter [kg] der Klasse
   double kg;
 
   Weight._internal(this.kg);
 
+  ///Bennanter Konstruktor [onMars] der übermittelt das Gewicht in anderer Konstruktor um den Koeffizienten zu berechnen.
   Weight.onMars(double weight) : this._internal(weight * 0.38);
   Weight.onMoon(double weight) : this._internal(weight * 0.16);
   Weight.onJupiter(double weight) : this._internal(weight * 2.36);
