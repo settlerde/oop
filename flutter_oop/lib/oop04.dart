@@ -82,7 +82,7 @@ void main() {
     print('  Teilnehmer:');
     for (var teilnehmer in kurs.teilnehmerListe) {
       print(
-        '  - ${teilnehmer.vorname}, ${teilnehmer.name}, ${teilnehmer.geschlecht.name}, Code: ${teilnehmer.berechtigung.code}',
+        '  - ${teilnehmer.vorname} ${teilnehmer.name}, ${teilnehmer.geschlecht.name}, Code: ${teilnehmer.berechtigung.code}',
       );
     }
   }
