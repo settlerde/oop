@@ -1,4 +1,4 @@
-/// Die Klasse aus der neue Objekte erstellt oderkopiert werden.
+/// Erstellt eine Kopie des aktuellen [Teilnehmer]-Objekts mit optional geänderten Attributen.
 class Teilnehmer {
   /// Klassenattribut ID
   final int idNumer;
@@ -12,12 +12,12 @@ class Teilnehmer {
   /// Klassenkonstruktor
   Teilnehmer(this.name, this.idNumer, [this.email]);
 
-  /// Klassenmethode 'Kopieren'
-  Teilnehmer copyWith({String? name, int? idNumer, Function(String?)? email}) {
+  /// Klassenmethode [copyWith] wird ihre eigene Klasse kopiert.
+  Teilnehmer copyWith({String? name, int? idNumer, String? email}) {
     return Teilnehmer(
       name ?? this.name,
       idNumer ?? this.idNumer,
-      email != null ? email(this.email) : this.email,
+      email ?? this.email,
     );
   }
 
@@ -27,7 +27,7 @@ class Teilnehmer {
 
 void main() {
   final user = Teilnehmer('Olek', 777);
-  final user2 = user.copyWith(idNumer: 333, email: (email) => 'user@email.de');
+  final user2 = user.copyWith(idNumer: 333, email: 'user@email.de');
   print(user);
   print(user2);
 }
