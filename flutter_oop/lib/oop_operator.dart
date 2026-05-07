@@ -23,34 +23,13 @@ class CoinStack {
   CoinStack? operator -(CoinStack other) {
     List<int> tempList = _coinsList;
     for (int i = 0; i < other._coinsList.length; i++) {
-      print("Versuch $i: ${other._coinsList[i]}");
-      print("Versuch $i: ${tempList[i]}");
+      //print('Versuch $i: ${other._coinsList[i]}');
+      //print('Versuch $i: ${tempList[i]}');
 
       tempList[i] - other._coinsList[i];
     }
     return CoinStack(tempList);
   }
-
-  // CoinStack? operator -(CoinStack other) {
-  //   List<int> tempList = _coinsList;
-  //   bool isRemove = false;
-  //   for (int i = 0; i < other._coinsList.length; i++) {
-  //     print("Erste for: ${other._coinsList[i]}");
-  //     print(_coinsList);
-  //     print(other._coinsList);
-  //     for (int j = 0; j < tempList.length; j++) {
-  //       print("Zweite for versuch $i: ${other._coinsList[i]}");
-  //       print("Zweite for versuch $j ${tempList[j]}");
-
-  //       if (other._coinsList[i] == tempList[j]) {
-  //         print("true");
-  //         tempList.remove(tempList[j]);
-  //         isRemove = true;
-  //       }
-  //     }
-  //   }
-  //   return isRemove ? CoinStack(tempList) : null;
-  // }
 
   /// Der Vergleichoperator [>] vergleicht die Summen zweier Listen.
   bool operator >(CoinStack other) {
