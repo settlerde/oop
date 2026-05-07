@@ -1,3 +1,5 @@
+import 'dart:math';
+
 /// Erstellt eine Kopie des aktuellen [Teilnehmer]-Objekts mit optional geänderten Attributen.
 class Teilnehmer {
   /// Klassenattribut ID
@@ -14,6 +16,7 @@ class Teilnehmer {
 
   /// Klassenmethode [copyWith] wird ihre eigene Klasse kopiert.
   Teilnehmer copyWith({String? name, int? idNumer, String? email}) {
+    // Immutability
     return Teilnehmer(
       name ?? this.name,
       idNumer ?? this.idNumer,
@@ -28,6 +31,8 @@ class Teilnehmer {
 void main() {
   final user = Teilnehmer('Olek', 777);
   final user2 = user.copyWith(idNumer: 333, email: 'user@email.de');
+  final user3 = user.copyWith(email: 'no data', idNumer: 123);
   print(user);
   print(user2);
+  print(user3);
 }
