@@ -1,4 +1,4 @@
-/// Die Klasse DeviceService mit der Methode die eine Liste von Werten ausgibt.
+/// [DeviceService] mit der Methode die eine Liste von Werten ausgibt.
 class DeviceService {
   /// Die Methode selbst die Akkustände ausgibt.
   static List<int> getBatteryLevels() {
