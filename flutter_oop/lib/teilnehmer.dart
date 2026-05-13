@@ -1,4 +1,3 @@
-import 'dart:math';
 
 /// Erstellt eine Kopie des aktuellen [Teilnehmer]-Objekts mit optional geänderten Attributen.
 class Teilnehmer {
