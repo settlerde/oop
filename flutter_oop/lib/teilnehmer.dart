@@ -1,17 +1,16 @@
-
 /// Erstellt eine Kopie des aktuellen [Teilnehmer]-Objekts mit optional geänderten Attributen.
 class Teilnehmer {
-  /// Klassenattribut ID
+  /// Klassenattribut ID nullable
   final int idNumer;
 
   /// KLassenattribut Name
   final String name;
 
   /// Optionales Attribut Email
-  final String? email;
+  final String email;
 
   /// Klassenkonstruktor
-  Teilnehmer(this.name, this.idNumer, [this.email]);
+  Teilnehmer(this.name, this.idNumer, this.email);
 
   /// Klassenmethode [copyWith] wird ihre eigene Klasse kopiert.
   Teilnehmer copyWith({String? name, int? idNumer, String? email}) {
@@ -28,7 +27,7 @@ class Teilnehmer {
 }
 
 void main() {
-  final user = Teilnehmer('Olek', 777);
+  final user = Teilnehmer('Olek', 777, 'no email');
   final user2 = user.copyWith(idNumer: 333, email: 'user@email.de');
   final user3 = user.copyWith(email: 'no data', idNumer: 123);
   print(user);
